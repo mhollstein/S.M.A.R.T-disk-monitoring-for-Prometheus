@@ -369,9 +369,9 @@ for device in ${device_list}; do
     cciss*)
       vendor=`$SMARTCTL -i -d "${type}" "${disk}" | awk -F ':' '/Vendor/ {print $2}'| sed -E 's/^\s+//g'`
       product=`$SMARTCTL -i -d "${type}" "${disk}" | awk -F ':' '/Product/ {print $2}'| sed -E 's/^\s+//g'`
+      name="${vendor} ${product}" 
       $SMARTCTL -a -d "${type}" "${disk}" | parse_smartctl_cciss_attributes "${disk}" "${type}" "${name}"  # get cciss metrics
       var="$(   $SMARTCTL -a -d "${type}" "${disk}" | parse_year_week   )"   ;;                            # set var with year and week information
-      name="${vendor} ${product}" ;;
     *)
       name=`$SMARTCTL -i -d "${type}" "${disk}" | awk -F ':' '/Device Model/ {print $2}'| sed -E 's/^\s+//g'` ;;
   esac
