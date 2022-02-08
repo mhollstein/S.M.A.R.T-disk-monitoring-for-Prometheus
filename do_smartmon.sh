@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # run smartmon.sh and create a temporary *.prom file
-# mv  temorary *.prom file to destination for textfile_collector
+# mv  temporary *.prom file to destination for textfile_collector
 # reason: textfile_collector should be able to read the *.prom file at any time
 
 # create metrics                   in this file                                   move this file to destination to be imported by textfile_collector, node_exporter, Prometheus
