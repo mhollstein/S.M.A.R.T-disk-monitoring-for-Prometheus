@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# run smartmon.sh and create a temporäry *.prom file
+# run smartmon.sh and create a temporary *.prom file
 # mv  temoräry *.prom file to destination for textfile_collector
 # reason: textfile_collector should be able to read the *.prom file at any time
 
